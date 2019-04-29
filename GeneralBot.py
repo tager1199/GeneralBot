@@ -32,8 +32,11 @@ async def on_message(message):
     msg = ""
 
     #if message author is bot
-    if message.author == client.user:
+    if message.author.bot == client.user:
         #stop the bot replying to itself
+        return
+
+    if message.author.bot == True:
         return
 
     if text.startswith("hello tom bot"):
